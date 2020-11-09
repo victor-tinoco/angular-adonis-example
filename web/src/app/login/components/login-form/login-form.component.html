@@ -1,0 +1,24 @@
+<form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+        <input type="email" placeholder="Seu usuário" formControlName="username" name="username" autocomplete="on">
+        <div *ngIf="loginForm.controls.username?.invalid && !loginForm.controls.username?.pristine"
+            class="alert-error-field">
+            {{ getMessage(this.loginForm.controls.username.errors) }}
+        </div>
+    </div>
+    <div>
+        <input type="password" placeholder="Sua senha" formControlName="password" name="password" autocomplete="on">
+        <div *ngIf="loginForm.controls.password?.invalid && !loginForm.controls.password?.pristine"
+            class="alert-error-field">
+            {{ getMessage(this.loginForm.controls.password.errors) }}
+        </div>
+    </div>
+
+    <div class="d-flex align-items-end ">
+        <a class="pr-2" [routerLink]="forgotPasswordPath">Esqueceu a senha?</a>
+    </div>
+    <button [disabled]="loginForm.invalid || loginForm.pending || isLoading" type="submit">
+        <span [hidden]="isLoading">Entrar</span>
+        <span [hidden]="!isLoading">Carregando...</span>
+    </button>
+</form>

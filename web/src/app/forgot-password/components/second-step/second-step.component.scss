@@ -1,0 +1,15 @@
+@import '../../pages/forgot-password-page/forgot-password-page.component.scss';
+
+:host{
+  width: 100%; 
+}
+
+#ss-form {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+      display: flex;
+      flex-direction: column;
+  }
+}

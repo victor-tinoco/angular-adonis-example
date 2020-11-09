@@ -1,0 +1,19 @@
+<form id="ss-form" [formGroup]="ssForm" (ngSubmit)="onSubmit()">
+  <a [routerLink]="previousPath">
+    <i class="material-icons">
+      arrow_back
+    </i>
+  </a>
+  <div class="subtitle">
+    Para continuar, você deverá informar o código enviado no e-mail
+  </div>
+  <div>
+    <input type="text" placeholder="Insira o código" formControlName="token" name="token">
+    <div *ngIf="ssForm.controls.token?.invalid && !ssForm.controls.token?.pristine" class="alert-error-field">
+      {{ getMessage(this.ssForm.controls.token?.errors) }}
+    </div>
+  </div>
+  <button [disabled]="ssForm.invalid || ssForm.pending" type="submit">
+    Confirmar
+  </button>
+</form>

@@ -1,0 +1,23 @@
+<form id="fs-form" [formGroup]="fsForm" (ngSubmit)="onSubmit()">
+  <a [routerLink]="previousPath">
+    <i class="material-icons">
+      arrow_back
+    </i>
+  </a>
+  <div class="subtitle">
+    Enviaremos um e-mail com o código para a recuperação de sua senha
+  </div>
+  <div>
+    <input type="email" placeholder="Seu e-mail" formControlName="email" name="email">
+    <div *ngIf="fsForm.controls.email?.invalid && !fsForm.controls.email?.pristine" class="alert-error-field">
+      {{ getMessage(this.fsForm.controls.email?.errors) }}
+    </div>
+  </div>
+  <div class="d-flex align-items-end ">
+    <a class="pr-2 mb-0" [routerLink]="nextPath">Já tem um código?</a>
+  </div>
+  <button [disabled]="fsForm.invalid || fsForm.pending || isLoading" type="submit">
+    <span [hidden]="isLoading">Enviar</span>
+    <span [hidden]="!isLoading">Enviando...</span>
+  </button>
+</form>

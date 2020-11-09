@@ -1,0 +1,54 @@
+@import '../../../../colors.scss';
+
+.back {
+    color: $dark-blue;
+    margin: 0 0 0 -4px;
+    padding: 0;
+    border: 0;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    margin: 20px 0 0 0;
+    background-color: transparent;
+
+    th {
+        font-size: 15px;
+        color: $red;
+        font-weight: bold;
+    }
+}
+
+.spinner-container {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit {
+    font-size: 20px;
+    color: $edit-icon-gray;
+}
+
+td.mat-column-options {
+    width: 30px;
+    padding-right: 5px !important; 
+}
+
+tr.user-row:hover {
+    background: whitesmoke;
+}
+
+.search-field {
+    margin-left: 20px;
+    width: 100%;
+    max-width: 300px;
+}

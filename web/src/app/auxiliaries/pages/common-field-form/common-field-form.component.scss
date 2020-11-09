@@ -1,0 +1,13 @@
+
+@import '../../../../colors.scss';
+
+mat-form-field.mat-form-field {
+  width: 100%;    
+}
+
+.back {
+  color: $dark-blue;
+  margin: 0 0 0 -4px;
+  padding: 0;
+  border: 0;
+}

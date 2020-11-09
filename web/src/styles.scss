@@ -1,0 +1,84 @@
+@import 'colors.scss';
+
+@import '~@angular/material/theming';
+@include mat-core();
+$pcvi-web-primary: mat-palette($md-darkblue);
+$pcvi-web-accent: mat-palette($md-red);
+// The warn palette is optional (defaults to red).
+$pcvi-web-warn: mat-palette($mat-red);
+$pcvi-web-theme: mat-light-theme($pcvi-web-primary, $pcvi-web-accent, $pcvi-web-warn);
+@include angular-material-theme($pcvi-web-theme);
+
+
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 300;
+  src: url('src/assets/fonts/AvenirLTStd-Light.otf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 350;
+  src: url('src/assets/fonts/AvenirLTStd-Book.otf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 400;
+  src: url('src/assets/fonts/AvenirLTStd-Roman.otf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 500;
+  src: url('src/assets/fonts/AvenirLTStd-Medium.otf');
+}
+
+@font-face {
+  font-family: 'Avenir';
+  font-style: normal;
+  font-weight: 900;
+  src: url('src/assets/fonts/AvenirLTStd-Black.otf');
+}
+
+* {
+    font-family: Avenir;
+    outline: 0;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+dl, ol, p, ul {
+  margin: 0 !important
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+button {
+  background-color: transparent;
+}
+
+.mat-flat-button {
+  padding: 0 30px !important;
+  font-size: 16px;
+}

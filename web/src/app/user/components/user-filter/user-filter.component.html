@@ -1,0 +1,19 @@
+<div>
+	<button class="mr-3" mat-icon-button color="accent" [matMenuTriggerFor]="menu" type="button">
+		<mat-icon>filter_list</mat-icon>
+	</button>
+	<mat-menu #menu="matMenu" xPosition="before">
+		<form id="user-form" (click)="$event.stopPropagation();">
+			<mat-form-field appearance="standard" color="accent">
+				<mat-label>Ceap</mat-label>
+				<mat-select>
+					<mat-option [value]="1">Amora com Bacon</mat-option>
+				</mat-select>
+				<mat-error *ngIf="false">
+					False
+					<!-- {{ this.getMessage(this.userForm.controls.group.errors) }} -->
+				</mat-error>
+			</mat-form-field>
+		</form>
+	</mat-menu>
+</div>

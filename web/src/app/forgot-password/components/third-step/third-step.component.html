@@ -1,0 +1,24 @@
+<form id="ts-form" [formGroup]="tsForm" (ngSubmit)="onSubmit()">
+  <a [routerLink]="previousPath">
+    <i class="material-icons">
+      arrow_back
+    </i>
+  </a>
+  <div>
+    <input type="password" placeholder="Nova senha" formControlName="password" name="password">
+    <div *ngIf="tsForm.controls.password?.invalid && !tsForm.controls.password?.pristine" class="alert-error-field">
+      {{ getMessage(this.tsForm.controls.password?.errors) }}
+    </div>
+  </div>
+  <div>
+    <input type="password" placeholder="Confirme a senha" formControlName="confirmPassword" name="confirmPassword">
+    <div *ngIf="tsForm.controls.confirmPassword?.invalid && !tsForm.controls.confirmPassword?.pristine"
+      class="alert-error-field">
+      {{ getMessage(this.tsForm.controls.confirmPassword?.errors) }}
+    </div>
+  </div>
+  <button [disabled]="tsForm.invalid || tsForm.pending || isLoading" type="submit">
+    <span [hidden]="isLoading">Confirmar</span>
+    <span [hidden]="!isLoading">Carregando...</span>
+  </button>
+</form>

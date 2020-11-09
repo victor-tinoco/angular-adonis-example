@@ -1,0 +1,32 @@
+<mat-sidenav-container class="transparent-bg">
+  <mat-sidenav #drawer class="sidenav hidden-menu" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <div class="d-flex flex-column align-items-center">
+      <img class="logo" src="../../../../assets/images/logo_br.png" alt="logo do observatório">
+      <hr>
+      <ul class="pages">
+        <li *ngFor="let item of pages" class="{{item.class}} nav-item">
+          <a routerLink="{{item.path}}" routerLinkActive="active" class="nav-link">
+            <i class="material-icons">{{item.icon}}</i>
+            <p>{{item.title}}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="transparent-bg">
+    <div class="d-flex align-items-center justify-content-between header">
+      <div class="d-flex align-items-center">
+        <button mat-icon-button color="primary" (click)="drawer.toggle()" type="button" *ngIf="isHandset$ | async">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h1>{{pageTitle}}</h1>
+      </div>
+      <app-profile-menu></app-profile-menu>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

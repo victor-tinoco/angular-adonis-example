@@ -1,0 +1,83 @@
+$dark-blue: #2F2E41;
+$dark-blue-hover: #292839;
+$red: #992e36;
+$light-gray: #9DA2AB;
+$edit-icon-gray: #7d7d7d;
+
+$radius: 4px;
+$dropd-menu-radius: 3px;
+
+$font-light: 300;
+$font-book: 350;
+$font-roman: 400;
+$font-medium: 500;
+$font-black: 900;
+
+$dropd-menu-shadow: 0px 1.5px 8px rgba(0, 0, 0, 0.25);
+
+// colors to send in material colors customization, created by http://mcg.mbitson.com/. Awesome!
+$md-darkblue: (
+    50 : #e6e6e8,
+    100 : #c1c0c6,
+    200 : #9797a0,
+    300 : #6d6d7a,
+    400 : #4e4d5e,
+    500 : #2f2e41,
+    600 : #2a293b,
+    700 : #232332,
+    800 : #1d1d2a,
+    900 : #12121c,
+    A100 : #6161ff,
+    A200 : #2e2eff,
+    A400 : #0000fa,
+    A700 : #0000e0,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #ffffff,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$md-red: (
+    50 : #f3e6e7,
+    100 : #e0c0c3,
+    200 : #cc979b,
+    300 : #b86d72,
+    400 : #a84d54,
+    500 : #992e36,
+    600 : #912930,
+    700 : #862329,
+    800 : #7c1d22,
+    900 : #6b1216,
+    A100 : #ffa1a4,
+    A200 : #ff6e73,
+    A400 : #ff3b42,
+    A700 : #ff2129,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);

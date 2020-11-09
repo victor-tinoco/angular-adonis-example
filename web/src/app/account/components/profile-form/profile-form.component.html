@@ -1,0 +1,48 @@
+<form id="profile-form" [formGroup]="profileForm">
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent" hideRequiredMarker=true>
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" formControlName="name" required>
+        <mat-error *ngIf="profileForm.controls.name?.invalid">
+          {{ this.getMessage(this.profileForm.controls.name.errors) }}</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent" hideRequiredMarker=true>
+        <mat-label>Usuário</mat-label>
+        <input matInput placeholder="Usuário" formControlName="username" required>
+        <mat-error *ngIf="profileForm.controls.username?.invalid">
+          {{ this.getMessage(this.profileForm.controls.username.errors) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent" hideRequiredMarker=true>
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="E-mail" formControlName="email" required>
+        <mat-error *ngIf="profileForm.controls.email?.invalid">
+          {{ this.getMessage(this.profileForm.controls.email.errors) }}</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent">
+        <mat-label>CEAP</mat-label>
+        <mat-select formControlName="ceap">
+          <mat-option *ngFor="let ceap of ceaps" [value]="ceap">{{ ceap }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent">
+        <mat-label>Tipo de Usuário</mat-label>
+        <mat-select formControlName="group">
+          <mat-option *ngFor="let group of groups" [value]="group">{{ group }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</form>

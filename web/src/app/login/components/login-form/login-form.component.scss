@@ -1,0 +1,15 @@
+@import '../../pages/login-page/login-page.component.scss';
+
+:host{
+  width: 100%; 
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+
+  > div {
+      display: flex;
+      flex-direction: column;
+  }
+}

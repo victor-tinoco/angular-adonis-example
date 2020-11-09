@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col d-flex justify-content-between">
+        <div class="d-flex w-100">
+            <button (click)="back()" class="back d-flex align-items-center" type="button">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+        <div class="d-flex align-items-center">
+            <button mat-flat-button color="accent" (click)="add()" type="button">
+                Adicionar
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <table mat-table [dataSource]="dataSource" *ngIf="!isLoading">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let e"> {{ e[keys[0]] }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let e"> {{ e.nome }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="options" stickyEnd>
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let e">
+                    <button mat-icon-button color="primary" (click)="show(e[keys[0]])" class="center" type="button">
+                        <mat-icon class="edit">edit</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="delete" stickyEnd>
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let e">
+                    <button mat-icon-button color="primary" (click)="delete(e[keys[0]])" class="center" type="button">
+                        <mat-icon class="delete">close</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row class="list-row" *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <mat-paginator #paginator [pageSize]=" pageSize" [pageSizeOptions]="[10]" [showFirstLastButtons]="true"
+            *ngIf="!isLoading" [length]="totalSize" (page)="handlePage($event)" [pageIndex]="currentPage">
+        </mat-paginator>
+        <div class="spinner-container" *ngIf="isLoading">
+            <mat-spinner color="primary" [diameter]="40"></mat-spinner>
+        </div>
+    </div>
+</div>

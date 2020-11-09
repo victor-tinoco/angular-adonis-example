@@ -1,0 +1,23 @@
+<button (click)="back()" class="back" type="button">
+	<mat-icon>arrow_back</mat-icon>
+</button>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+	<div class="row">
+		<div class="col">
+			<mat-form-field appearance="standard" color="accent" hideRequiredMarker=true>
+				<mat-label>Nome</mat-label>
+				<input matInput placeholder="Nome" formControlName="name" required>
+				<mat-error *ngIf="form.controls.name?.invalid">
+					{{ this.getMessage(this.form.controls.name.errors) }}</mat-error>
+			</mat-form-field>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col d-flex justify-content-end">
+			<button mat-flat-button color="accent" type="submit" [disabled]="form.invalid || form.pending || isLoading">
+				Salvar
+			</button>
+		</div>
+	</div>
+</form>

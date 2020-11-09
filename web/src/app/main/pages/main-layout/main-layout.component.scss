@@ -1,0 +1,92 @@
+@import '../../../../colors.scss';
+
+hr {
+    height: .3px;
+    width: calc(100% - 28px);
+    background-color: rgba(180,180,180,.2);
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+    padding: 30px 14px 0 14px;
+
+    li {
+        display: list-item;
+        
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+        
+        .active {
+            background-color: $red;
+            color: white;
+            // box-shadow: 0 4px 20px 0 rgba(0,0,0,.14), 0 7px 10px -5px rgba(153, 46, 54, .4);
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: $radius;
+            color: $light-gray;
+
+            &:hover:not(.active) {
+                background-color: #F5F5F5;
+            }
+            
+            i {
+                margin-right: 15px;
+                font-size: 24px;
+                line-height: 30px;
+                text-align: center;
+            }
+            
+            p {
+                font-size: 14px;
+                padding: 2px 0 0;
+                line-height: 30px;
+                font-weight: $font-book;
+            }
+        }
+    }
+}
+
+.transparent-bg {
+    background-color: transparent !important;
+    height: 100%;
+}
+
+.logo {
+    margin: 30px 0;
+}
+
+.hidden-menu {
+    width: 260px;
+}
+
+.sidenav {
+    box-shadow: 0 16px 38px -12px rgba(0,0,0,.56), 0 4px 25px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(0,0,0,.2);
+    border: 0;
+}
+
+
+// Wrapper
+.header {
+    padding: 30px;
+    
+    h1 {
+        color: $dark-blue;
+        margin: 0 0 0 10px;
+        line-height: 1;
+        font-size: 16px;
+        padding-top: 6px;
+        font-weight: $font-book;
+    }
+}
+
+.content {
+    padding: 0 40px;
+    width: 100%;
+}

@@ -1,0 +1,65 @@
+<form id="user-form" [formGroup]="userForm" (ngSubmit)="submit()">
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent" hideRequiredMarker=true>
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" formControlName="name" required>
+        <mat-error *ngIf="userForm.controls.name?.invalid">
+          {{ this.getMessage(this.userForm.controls.name.errors) }}</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent" hideRequiredMarker=true>
+        <mat-label>Usuário</mat-label>
+        <input matInput placeholder="Usuário" formControlName="username" required>
+        <mat-error *ngIf="userForm.controls.username?.invalid">
+          {{ this.getMessage(this.userForm.controls.username.errors) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent" hideRequiredMarker=true>
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="E-mail" formControlName="email" required>
+        <mat-error *ngIf="userForm.controls.email?.invalid">
+          {{ this.getMessage(this.userForm.controls.email.errors) }}</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent">
+        <mat-label>CEAP</mat-label>
+        <mat-select formControlName="ceap">
+          <mat-option *ngFor="let ceap of ceaps" [value]="ceap.id_ceap">{{ ceap.nome }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="userForm.controls.ceap?.invalid">
+          {{ this.getMessage(this.userForm.controls.ceap.errors) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field appearance="standard" color="accent">
+        <mat-label>Tipo de Usuário</mat-label>
+        <mat-select formControlName="group">
+          <mat-option *ngFor="let group of groups" [value]="group.id_group">{{ group.title }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="userForm.controls.group?.invalid">
+          {{ this.getMessage(this.userForm.controls.group.errors) }}</mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-checkbox class="active" color="primary" formControlName="active">Ativo</mat-checkbox>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-end">
+      <button mat-flat-button color="accent" type="submit"
+        [disabled]="userForm.invalid || userForm.pending || isLoading">
+        Salvar
+      </button>
+    </div>
+  </div>
+</form>

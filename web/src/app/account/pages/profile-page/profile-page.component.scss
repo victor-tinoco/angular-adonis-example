@@ -1,0 +1,21 @@
+@import '../../../../colors.scss';
+
+button {
+    color: $dark-blue;
+    margin: 0 0 25px -4px;
+    padding: 0;
+    border: 0;
+}
+
+h2 {
+    color: $dark-blue;
+    margin: 0 0 15px;
+    line-height: 1;
+    font-size: 16px;
+    padding-top: 6px;
+    font-weight: $font-book;
+}
+
+.np {
+    margin: 50px 0 0;
+}

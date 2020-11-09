@@ -1,0 +1,41 @@
+<div>
+  <button mat-icon-button color="primary" [matMenuTriggerFor]="menu" type="button">
+    <mat-icon>person</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" xPosition="before">
+    <ul class="options">
+      <li>
+        <a [routerLink]="profilePath">
+          <i class="material-icons">person</i>
+          <p>{{ profileTitle }}</p>
+        </a>
+      </li>
+      <li>
+        <a class="config-link" (click)="toggleConfigDropd($event)">
+          <div>
+            <i class="material-icons">settings</i>
+            <p>{{ configTitle }}</p>
+          </div>
+          <mat-icon *ngIf="!configIsOpen" class="material-icons">keyboard_arrow_down</mat-icon>
+          <mat-icon *ngIf="configIsOpen" class="material-icons">keyboard_arrow_up</mat-icon>
+        </a>
+      </li>
+      <li *ngIf="configIsOpen == true">
+        <a [routerLink]="ceapPath">
+          <p>{{ ceapTitle }}</p>
+        </a>
+      </li>
+      <li *ngIf="configIsOpen == true">
+        <a [routerLink]="userPath">
+          <p>{{ userTitle }}</p>
+        </a>
+      </li>
+      <li>
+        <a (click)="exit()">
+          <i class="material-icons exit">exit_to_app</i>
+          <p>Sair</p>
+        </a>
+      </li>
+    </ul>
+  </mat-menu>
+</div>

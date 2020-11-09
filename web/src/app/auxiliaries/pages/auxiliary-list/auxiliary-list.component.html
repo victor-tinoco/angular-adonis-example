@@ -1,0 +1,7 @@
+<div class="row">
+    <div *ngFor="let category of fields" class="col-xl-3 col-lg-6 col-12 ">
+        <h2>{{ category.category }}</h2>
+        <app-auxiliary-container *ngFor="let field of category.fields" [field]="field" (onTap)="tap(field)">
+        </app-auxiliary-container>
+    </div>
+</div>
